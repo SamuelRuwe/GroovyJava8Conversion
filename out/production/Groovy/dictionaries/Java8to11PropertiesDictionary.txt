@@ -1,0 +1,2 @@
+spring.view.prefix= spring.mvc.view.prefix=
+spring.view.suffix= spring.mvc.view.suffix=
