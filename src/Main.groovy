@@ -14,7 +14,7 @@ class Main {
 
         def backupFile, fileText;
 
-        def exts = [".java", ".properties"]
+        def exts = [".java", ".properties", ".gradle"]
 
         new File(dictRoot).eachFileRecurse(
                 file -> {
@@ -27,11 +27,13 @@ class Main {
                         dict.put(a, b)
                     }
                 })
+        println dictionaries.get('.gradle')
 
         fileRoot.eachFileRecurse(
                 { file ->
                     for (ext in exts) {
                         if (file.name.endsWith(ext)) {
+                            println file.name
                             fileText = file.text
                             backupFile = new File(file.path + ".bak")
                             backupFile.write(fileText)
